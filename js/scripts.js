@@ -1,18 +1,21 @@
 
 $(document).ready(function() {
   $("#form").submit(function(event) {
-    var foodInput = $("#food").val();
-    var movieInput = $("#movie").val();
-    var animalInput = $("#animal").val();
 
-    var favorites = [];
+    var itemsInput = ["item1", "item2", "item3"];
 
-    favorites.push(foodInput, movieInput, animalInput);
-    var favorites2 = [];
-    favorites2.push(favorites[1], favorites[2]);
+    var groceries = itemsInput.map(function(itemInput) {
+      return $("input#" + itemInput).val();
+    });
+    console.log(groceries);
 
-    $("ul").append("<li>" + favorites2[0] + "</li>");
-    $("ul").append("<li>" + favorites2[1] + "</li>");
+    items.sort().toUpperCase();
+
+    items.forEach(function(item) {
+       $("ul").append("<li>" + item + "</li>");
+    });
+
+    $("form").hide();
 
     event.preventDefault();
   });
