@@ -9,10 +9,10 @@ $(document).ready(function() {
     });
     console.log(groceries);
 
-    items.sort().toUpperCase();
+    groceries.sort();
 
-    items.forEach(function(item) {
-       $("ul").append("<li>" + item + "</li>");
+    groceries.forEach(function(grocery) {
+       $("ul").append("<li>" + grocery.toUpperCase() + "</li>");
     });
 
     $("form").hide();
